@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIPS Kahuta Institute of Professional Studies - Admissions Open</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #f59e0b;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow-x: hidden;
+            color: var(--text-dark);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        /* Hero Section with Background Image */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(59, 130, 246, 0.8)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .admission-badge {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logos Section */
+        .logos-section {
+            background: white;
+            padding: 40px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .logo-item {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-item:hover {
+            transform: scale(1.1);
+        }
+
+        .logo-item img {
+            height: 80px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            filter: grayscale(0%);
+        }
+
+        .logo-caption {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            margin: 10px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-primary {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .cta-primary:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+            color: white;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* About Section */
+        .about-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Campus Gallery Section */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            height: 300px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--secondary-color);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Campus Info Section */
+        .campus-info {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .campus-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Courses Section */
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .course-content {
+            padding: 25px;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .course-duration {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .course-fee {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Admission Process */
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -25%;
+            width: 50%;
+            height: 2px;
+            background: var(--accent-color);
+            transform: translateY(-50%);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 50px 0 30px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .process-step::after {
+                display: none;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+
+            .logos-container {
+                gap: 30px;
+            }
+
+            .logo-item img {
+                height: 60px;
+            }
+        }
+
+        /* 3D Card Effect */
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card-3d:hover {
+            transform: rotateY(10deg) rotateX(10deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="download.png" alt="userlmn_2eb3fce44793865ba79a0c23b0981278.png" class="logo">
+                KIPS Kahuta
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#campus">Campus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#admission">Admission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="text-center">
+                    <div class="admission-badge">
+                        <i class="fas fa-fire me-2"></i>ADMISSIONS OPEN 2025
+                    </div>
+                    <h1 class="hero-title">KIPS Kahuta Institute<br>of Professional Studies</h1>
+                    <p class="hero-subtitle">Shaping Future Professionals Since 2002</p>
+                    <div>
+                        <a href="#courses" class="cta-button cta-primary">
+                            <i class="fas fa-book me-2"></i>Explore Courses
+                        </a>
+                        <a href="#campus" class="cta-button cta-secondary">
+                            <i class="fas fa-images me-2"></i>View Campus
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logos Section -->
+    <section class="logos-section">
+        <div class="container">
+            <div class="logos-container">
+                <div class="logo-item">
+                    <img src="IMG-20240729-WA0066.jpg" alt="KIPS Kahuta Institute">
+                    <div class="logo-caption">KIPS Kahuta Institute</div>
+                </div>
+                <div class="logo-item">
+                    <img src="Capture.jpg" alt="HEC Recognized">
+                    <div class="logo-caption">HEC Recognized</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Why Choose KIPS Kahuta?</h2>
+            <p class="section-subtitle" data-aos="fade-up">Excellence in Professional Education</p>
+            
+            <div class="campus-info" data-aos="fade-up">
+                <img src="IMG-20240729-WA0066.jpg" alt="KIPS Kahuta Campus" class="campus-image">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>State-of-the-Art Campus</h3>
+                        <p>Our Kahuta campus features modern classrooms, well-equipped labs, a comprehensive library, and comfortable student facilities. Located in the heart of Kahuta, our campus provides an ideal learning environment with easy access to public transportation.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Modern Facilities</h3>
+                        <ul>
+                            <li>Computer labs with latest technology</li>
+                            <li>Spacious and air-conditioned classrooms</li>
+                            <li>Digital library with 24/7 access</li>
+                            <li>Conference and seminar halls</li>
+                            <li>Cafeteria and recreational areas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="about-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Expert Faculty</h3>
+                        <p>Learn from industry experts and experienced professionals who bring real-world knowledge to the classroom.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="about-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Job Placement</h3>
+                        <p>100% job placement assistance with our extensive network of partner companies and organizations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="about-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Industry Certifications</h3>
+                        <p>Get recognized certifications from leading industry bodies to boost your career prospects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Gallery Section -->
+    <section id="campus" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Campus Gallery</h2>
+            <p class="section-subtitle" data-aos="fade-up">Take a virtual tour of our modern campus facilities</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern Classroom">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Computer Lab">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Library">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Seminar Hall">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Campus Building">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')">
+                        <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Student Lounge">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="Capture.jpg" alt="kahuta campus">
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Professional Courses</h2>
+            <p class="section-subtitle" data-aos="fade-up">Choose from our wide range of industry-relevant programs</p>
+            
+            <div class="spinner" id="coursesLoader"></div>
+            <div class="row g-4" id="coursesContainer">
+                <!-- Courses will be loaded here via AJAX -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section id="admission" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Admission Process</h2>
+            <p class="section-subtitle" data-aos="fade-up">Simple and straightforward admission procedure</p>
+            
+            <div class="row">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Apply Online</h4>
+                        <p>Fill out the online application form with your details</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Submit Documents</h4>
+                        <p>Upload required documents for verification</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Interview</h4>
+                        <p>Attend a brief interview with our admission team</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Get Enrolled</h4>
+                        <p>Complete fee payment and start your journey</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <p class="section-subtitle" data-aos="fade-up">We're here to help you start your professional journey</p>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form" data-aos="fade-up">
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Interested Course</label>
+                                    <select class="form-select" id="course" required>
+                                        <option value="">Select a course</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="cta-button cta-primary">
+                                        <i class="fas fa-paper-plane me-2"></i>Submit Application
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="formMessage" class="mt-3 text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>KIPS Kahuta</h5>
+                    <p class="mt-3">Leading institute of professional studies dedicated to shaping the future of tomorrow's professionals.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links mt-3">
+                        <div class="mb-2"><a href="#about">About Us</a></div>
+                        <div class="mb-2"><a href="#campus">Campus</a></div>
+                        <div class="mb-2"><a href="#courses">Courses</a></div>
+                        <div class="mb-2"><a href="#admission">Admission</a></div>
+                        <div class="mb-2"><a href="#contact">Contact</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <div class="mt-3">
+                        <p><i class="fas fa-map-marker-alt me-2"></i>Near Hadi Mani THQ</p>
+                        <p><i class="fas fa-phone me-2"></i>0513311200</p>
+                        <p><i class="fas fa-envelope me-2"></i>vu.edu.pk</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
+            <div class="text-center">
+                <p>&copy; 2025 KIPS Kahuta Institute of Professional Studies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Smooth scrolling for navigation links
+        $(document).ready(function() {
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this.getAttribute('href'));
+                if(target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 80
+                    }, 1000);
+                }
+            });
+
+            // Navbar background on scroll
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('.navbar').css('background', 'rgba(255, 255, 255, 0.98)');
+                } else {
+                    $('.navbar').css('background', 'rgba(255, 255, 255, 0.95)');
+                }
+            });
+
+            // Load courses via AJAX
+            loadCourses();
+
+            // Handle contact form submission
+            $('#contactForm').on('submit', function(e) {
+                e.preventDefault();
+                handleFormSubmission();
+            });
+        });
+
+        // Load courses data
+        function loadCourses() {
+            $('#coursesLoader').show();
+            
+            // Simulate AJAX call with setTimeout
+            setTimeout(() => {
+                const coursesData = [
+                    {
+                        id: 1,
+                        title: "Web Development",
+                        duration: "6 Months",
+                        fee: "PKR 45,000",
+                        icon: "fas fa-code",
+                        description: "Master modern web technologies including HTML5, CSS3, JavaScript, and popular frameworks."
+                    },
+                    {
+                        id: 2,
+                        title: "Digital Marketing",
+                        duration: "4 Months",
+                        fee: "PKR 35,000",
+                        icon: "fas fa-bullhorn",
+                        description: "Learn SEO, social media marketing, content strategy, and analytics for digital success."
+                    },
+                    {
+                        id: 3,
+                        title: "Graphic Designing",
+                        duration: "5 Months",
+                        fee: "PKR 40,000",
+                        icon: "fas fa-palette",
+                        description: "Create stunning visual designs using industry-standard tools like Photoshop and Illustrator."
+                    },
+                    {
+                        id: 4,
+                        title: "Mobile App Development",
+                        duration: "8 Months",
+                        fee: "PKR 55,000",
+                        icon: "fas fa-mobile-alt",
+                        description: "Build native and cross-platform mobile applications for iOS and Android."
+                    },
+                    {
+                        id: 5,
+                        title: "Data Science",
+                        duration: "10 Months",
+                        fee: "PKR 65,000",
+                        icon: "fas fa-chart-bar",
+                        description: "Analyze data and build predictive models using Python, R, and machine learning."
+                    },
+                    {
+                        id: 6,
+                        title: "Network Administration",
+                        duration: "6 Months",
+                        fee: "PKR 50,000",
+                        icon: "fas fa-network-wired",
+                        description: "Learn to design, implement, and manage computer networks and security systems."
+                    }
+                ];
+
+                displayCourses(coursesData);
+                populateCourseSelect(coursesData);
+                $('#coursesLoader').hide();
+            }, 1000);
+        }
+
+        // Display courses
+        function displayCourses(courses) {
+            const container = $('#coursesContainer');
+            container.empty();
+
+            courses.forEach((course, index) => {
+                const courseCard = `
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="${index * 100}">
+                        <div class="course-card card-3d">
+                            <div class="course-image">
+                                <i class="${course.icon}"></i>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-title">${course.title}</h3>
+                                <p class="course-duration">
+                                    <i class="fas fa-clock me-2"></i>${course.duration}
+                                </p>
+                                <p>${course.description}</p>
+                                <div class="course-fee">${course.fee}</div>
+                                <button class="btn btn-primary w-100" onclick="enrollCourse(${course.id})">
+                                    Enroll Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.append(courseCard);
+            });
+        }
+
+        // Populate course select dropdown
+        function populateCourseSelect(courses) {
+            const select = $('#course');
+            courses.forEach(course => {
+                select.append(`<option value="${course.id}">${course.title}</option>`);
+            });
+        }
+
+        // Handle form submission
+        function handleFormSubmission() {
+            const formData = {
+                fullName: $('#fullName').val(),
+                email: $('#email').val(),
+                phone: $('#phone').val(),
+                course: $('#course').val(),
+                message: $('#message').val()
+            };
+
+            // Show loading state
+            $('#formMessage').html('<div class="spinner-border text-primary" role="status"></div>');
+
+            // Simulate AJAX submission
+            setTimeout(() => {
+                $('#formMessage').html(`
+                    <div class="alert alert-success" role="alert">
+                        <i class="fas fa-check-circle me-2"></i>
+                        Thank you! Your application has been submitted successfully. We'll contact you soon.
+                    </div>
+                `);
+                $('#contactForm')[0].reset();
+            }, 1500);
+        }
+
+        // Enroll in course
+        function enrollCourse(courseId) {
+            $('html, body').animate({
+                scrollTop: $('#contact').offset().top - 80
+            }, 1000);
+            
+            // Pre-select the course
+            $('#course').val(courseId);
+        }
+
+        // Lightbox functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.style.display = 'block';
+            lightboxImg.src = imageSrc;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
